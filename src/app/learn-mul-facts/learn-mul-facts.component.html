@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Multiplication facts of number: {{data.selectedNumber}}</h1>
+<div mat-dialog-content>
+    <mat-list role="list">
+        @for (idx of [1,2,3,4,5,6,7,8,9,10]; track idx) {
+            <mat-list-item role="listitem">{{data.selectedNumber}} X {{idx}} = {{data.selectedNumber * idx}}</mat-list-item>
+        }
+    </mat-list>
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+</div>
