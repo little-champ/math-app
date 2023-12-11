@@ -7,10 +7,15 @@
     </mat-list>
 </div>
 <div mat-dialog-actions>
-    <button mat-button mat-dialog-close>Close</button>
-    <!-- <mat-slide-toggle #autoScroll (click)="onAutoScroll(autoScroll.checked)">Auto Scroll</mat-slide-toggle> -->
-    <span style="margin-left: 12px;">Scroll ({{scrollSpeedLabel}})</span>
-    <mat-slider #slider min="0" max="5" step="1" showTickMarks (change)="onScrollChange()">
-        <input matSliderThumb [(ngModel)]="scrollSpeed">
-    </mat-slider>
+    <div class="dialog-action-container">
+        <div style="padding-top: 5px">
+            <button mat-button mat-dialog-close>Close</button>
+        </div>
+        <div>
+            <span>Scroll ({{scrollSpeedLabel}})</span>
+            <mat-slider #slider min="0" max="5" step="1" showTickMarks (change)="onScrollChange()">
+                <input matSliderThumb [(ngModel)]="scrollSpeed">
+            </mat-slider>
+        </div>
+    </div>
 </div>
