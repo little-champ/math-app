@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>Test for number: {{data.selectedNumber}}</h1>
+<div mat-dialog-content>
+    <form class="test-form">
+        <div>
+            <mat-label>{{data.selectedNumber}} X {{indexValue}} = </mat-label>
+            <mat-form-field class="answer-box">
+                <input #answerBox matInput name="answer" type="number" [(ngModel)]="answer">
+            </mat-form-field>
+        </div>
+        <div class="answer-label-container" [ngStyle]="{'color': (isAnswerCorrect) ? 'green' : 'red'}">
+            <mat-label>{{answerLabel}}</mat-label>
+        </div>
+        <div class="answer-button-container">
+            <button mat-raised-button color="primary" *ngIf="showCheckAnserButton" (click)="checkAnswer()">Check Answer</button>
+            <button mat-raised-button color="primary" *ngIf="showNextTestButton" (click)="nextTest()">Next Test</button>
+            <div style="font-size: small;">(or press enter)</div>
+        </div>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <div>
+        <div>
+            <button mat-button mat-dialog-close>Close</button>
+        </div>
+    </div>
+</div>

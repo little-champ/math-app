@@ -63,7 +63,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center ;
+    align-items: center;
     width: 100%;
     max-width: 700px;
     margin-bottom: 3rem;
@@ -101,19 +101,17 @@
 
 <main class="main">
   <div class="content">
-    <div>
-      <mat-form-field>
-        <mat-label>Select a number</mat-label>
-        <mat-select [(value)]="selectedNumber">
-          @for (num of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]; track num) {
-          <mat-option [value]="num">{{ num }}</mat-option>
-          }
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div>
-      <button mat-button (click)="openDialog()">Learn Multiplication Facts</button>
-    </div>
+    <mat-form-field>
+      <mat-label>Select a number</mat-label>
+      <mat-select [(value)]="selectedNumber">
+        @for (num of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]; track num) {
+        <mat-option [value]="num">{{ num }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <button mat-button mat-raised-button color="primary" (click)="openLearnDialog()">Learn Multiplication Facts</button>
+    <button style="margin-top: 20px;" mat-button mat-raised-button color="primary" (click)="openTestDialog()">Test
+      Multiplication Facts</button>
   </div>
 </main>
 
